@@ -203,6 +203,20 @@ class Client
     }
 
     /**
+     * Get the receiver token.
+     *
+     * @return string
+     */
+    public function receiverToken()
+    {
+        if ($this->key == 'receiver') {
+            return $this->response('token');
+        }
+
+        return $this->response('receiver.token');
+    }
+
+    /**
      * Get an array or string of errors.
      *
      * @return array|string

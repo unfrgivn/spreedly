@@ -133,6 +133,14 @@ Spreedly::transaction()->purchase();
 Spreedly::transaction()->void();
 Spreedly::transaction()->credit();
 Spreedly::transaction()->capture();
+
+// Receiver calls
+Spreedly::receiver()->all();
+Spreedly::receiver()->create();
+Spreedly::receiver()->update();
+Spreedly::receiver()->disable();
+Spreedly::receiver()->get();
+Spreedly::receiver()->deliver();
 ```
 
 ## Changelog
