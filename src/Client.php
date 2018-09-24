@@ -1,6 +1,6 @@
 <?php
 
-namespace Tuurbo\Spreedly;
+namespace Cig\Spreedly;
 
 use GuzzleHttp\ClientInterface as GuzzleInterface;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
@@ -52,7 +52,7 @@ class Client
      * @param string $method optional
      * @param array  $data   optional
      *
-     * @return Tuurbo\Spreedly\Client
+     * @return Cig\Spreedly\Client
      */
     protected function request($url, $method, array $data = null)
     {
@@ -88,7 +88,7 @@ class Client
      *
      * @param mixed $response
      *
-     * @return Tuurbo\Spreedly\Client
+     * @return Cig\Spreedly\Client
      */
     public function setResponse($response)
     {

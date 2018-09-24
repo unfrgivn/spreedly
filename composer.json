@@ -1,13 +1,17 @@
 {
-	"name": "tuurbo/spreedly",
+	"name": "itcig/spreedly",
 	"description": "Spreedly API",
-	"keywords": ["spreedly", "laravel", "credit card", "payment"],
+	"keywords": ["spreedly", "credit card", "payment"],
 	"license": "MIT",
 	"authors": [
 		{
 			"name": "Daniel Fraser",
 			"email": "dlf1987+github@gmail.com"
-		}
+		},
+        {
+          "name": "Brad Ash",
+          "email": "bash@capinfogroup.com"
+        }
 	],
 	"require": {
 		"php": ">=5.5.0",
@@ -18,7 +22,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Tuurbo\\Spreedly\\": "src/"
+			"Cig\\Spreedly\\": "src/"
 		}
 	}
 }

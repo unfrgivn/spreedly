@@ -1,6 +1,6 @@
 <?php
 
-namespace Tuurbo\Spreedly;
+namespace Cig\Spreedly;
 
 class Payment
 {
@@ -30,7 +30,7 @@ class Payment
      *
      * @param string $paymentToken optional
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function all($paymentToken = null)
     {
@@ -48,7 +48,7 @@ class Payment
      *
      * @param array $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function create(array $data)
     {
@@ -64,7 +64,7 @@ class Payment
      *
      * @param array $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function update(array $data)
     {
@@ -82,7 +82,7 @@ class Payment
     /**
      * Retain a payment method on Spreedly.
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function retain()
     {
@@ -96,7 +96,7 @@ class Payment
     /**
      * Update a credit card’s verification value.
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function recache($cvv)
     {
@@ -120,7 +120,7 @@ class Payment
      *
      * @param string $currency optional
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function store($currency = null)
     {
@@ -148,7 +148,7 @@ class Payment
     /**
      * Get details of a payment method on Spreedly.
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function get()
     {
@@ -162,7 +162,7 @@ class Payment
     /**
      * Disable a payment method stored on Spreedly.
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function disable()
     {
@@ -184,7 +184,7 @@ class Payment
      * @param string $currency
      * @param array  $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function generalCredit($amount, $currency = 'USD', array $data = [])
     {
@@ -196,7 +196,7 @@ class Payment
      *
      * @param array $params
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      *
      * @link https://docs.spreedly.com/reference/api/v1/gateways/verify/
      */
@@ -230,7 +230,7 @@ class Payment
      * @param string $paymentToken optional
      * @param array  $data         optional
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function transactions($paymentToken = null, array $data = [])
     {
@@ -262,7 +262,7 @@ class Payment
      * @param string $currency
      * @param array  $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function authorize($amount, $currency = 'USD', array $data = [])
     {
@@ -284,7 +284,7 @@ class Payment
      * @param string $currency
      * @param array  $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function purchase($amount, $currency = 'USD', array $data = [])
     {
@@ -299,7 +299,7 @@ class Payment
      * @param string $currency
      * @param array  $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      *
      * @throws Exceptions\InvalidAmountException
      * @throws Exceptions\MissingGatewayTokenException

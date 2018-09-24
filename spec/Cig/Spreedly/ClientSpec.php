@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Tuurbo\Spreedly;
+namespace spec\Cig\Spreedly;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -26,7 +26,7 @@ class ClientSpec extends ObjectBehavior
 
     public function letGo()
     {
-        $this->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_returns_an_array()
@@ -114,7 +114,7 @@ class ClientSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn(new ClientStub404());
 
-        $this->shouldThrow('Tuurbo\Spreedly\Exceptions\NotFoundHttpException')
+        $this->shouldThrow('Cig\Spreedly\Exceptions\NotFoundHttpException')
             ->duringGet(self::END_POINT);
     }
 

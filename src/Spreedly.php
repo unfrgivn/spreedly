@@ -1,6 +1,6 @@
 <?php
 
-namespace Tuurbo\Spreedly;
+namespace Cig\Spreedly;
 
 use GuzzleHttp\Client as Guzzle;
 
@@ -18,7 +18,7 @@ class Spreedly
      *
      * @param string $token optional
      *
-     * @return \Tuurbo\Spreedly\Gateway
+     * @return \Cig\Spreedly\Gateway
      */
     public function gateway($token = null)
     {
@@ -30,7 +30,7 @@ class Spreedly
      *
      * @param string $paymentToken optional
      *
-     * @return \Tuurbo\Spreedly\Payment
+     * @return \Cig\Spreedly\Payment
      */
     public function payment($paymentToken = null)
     {
@@ -42,7 +42,7 @@ class Spreedly
      *
      * @param string $token optional
      *
-     * @return \Tuurbo\Spreedly\Transaction
+     * @return \Cig\Spreedly\Transaction
      */
     public function transaction($token = null)
     {

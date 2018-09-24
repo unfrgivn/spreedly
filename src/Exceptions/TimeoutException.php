@@ -1,6 +1,6 @@
 <?php
 
-namespace Tuurbo\Spreedly\Exceptions;
+namespace Cig\Spreedly\Exceptions;
 
 class TimeoutException extends \Exception
 {

@@ -16,12 +16,12 @@ Next, update app/config/app.php to include a reference to this package's service
 ```php
 'providers' => [
     ...
-   'Tuurbo\Spreedly\SpreedlyServiceProvider'
+   'Cig\Spreedly\SpreedlyServiceProvider'
 ]
 
 'aliases' => [
     ...
-    'Spreedly' => 'Tuurbo\Spreedly\SpreedlyFacade'
+    'Spreedly' => 'Cig\Spreedly\SpreedlyFacade'
 ]
 ```
 
@@ -55,7 +55,7 @@ $config = [
     'connect_timeout' => '', // (optional) Default 10 seconds
 ];
 
-$spreedly = new Tuurbo\Spreedly\Spreedly($config);
+$spreedly = new Cig\Spreedly\Spreedly($config);
 
 // The amount must be an integer as per required by Spreedly. E.g., 1098 for $10.98.
 $resp = $spreedly->payment($paymentToken)->purchase(1098);
@@ -146,7 +146,7 @@ Spreedly::transaction()->capture();
 ### 2.1
 - changed default timeout from 15 seconds to 64 seconds as recommended by Spreedly.
 - added timeout method to change timeout per api call. E.g., ```Spreedly::timeout(25)->payment()->purchase()```.
-- added new ```Tuurbo\Spreedly\Exceptions\TimeoutException``` for catching timeouts.
+- added new ```Cig\Spreedly\Exceptions\TimeoutException``` for catching timeouts.
 
 ### 2.0
 - amount is no longer converted to cents.

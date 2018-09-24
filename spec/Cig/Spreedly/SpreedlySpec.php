@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Tuurbo\Spreedly;
+namespace spec\Cig\Spreedly;
 
 use PhpSpec\ObjectBehavior;
 
@@ -19,25 +19,25 @@ class SpreedlySpec extends ObjectBehavior
 
         $this->beConstructedWith($config);
 
-        $this->shouldHaveType('Tuurbo\Spreedly\Spreedly');
+        $this->shouldHaveType('Cig\Spreedly\Spreedly');
     }
 
     public function it_returns_a_gateway_instance()
     {
         $this->gateway()
-            ->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Gateway');
+            ->shouldReturnAnInstanceOf('Cig\Spreedly\Gateway');
     }
 
     public function it_returns_a_payment_instance()
     {
         $this->payment()
-            ->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Payment');
+            ->shouldReturnAnInstanceOf('Cig\Spreedly\Payment');
     }
 
     public function it_returns_a_transaction_instance()
     {
         $this->transaction()
-            ->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Transaction');
+            ->shouldReturnAnInstanceOf('Cig\Spreedly\Transaction');
     }
 
     public function it_throws_an_exception_if_config_is_invalid()
@@ -48,14 +48,14 @@ class SpreedlySpec extends ObjectBehavior
             'gateway' => null,
         ];
 
-        $this->shouldThrow('Tuurbo\Spreedly\Exceptions\InvalidConfigException')
+        $this->shouldThrow('Cig\Spreedly\Exceptions\InvalidConfigException')
             ->duringSetConfig($config);
     }
 
     public function it_throws_an_exception_if_gateway_token_is_not_set()
     {
         $this->payment(self::PAYMENT_TOKEN)
-            ->shouldThrow('Tuurbo\Spreedly\Exceptions\MissingGatewayTokenException')
+            ->shouldThrow('Cig\Spreedly\Exceptions\MissingGatewayTokenException')
             ->duringPurchase(9.00);
     }
 
@@ -63,7 +63,7 @@ class SpreedlySpec extends ObjectBehavior
     {
         $this->gateway(self::GATEWAY_TOKEN)
             ->payment()
-            ->shouldThrow('Tuurbo\Spreedly\Exceptions\MissingPaymentTokenException')
+            ->shouldThrow('Cig\Spreedly\Exceptions\MissingPaymentTokenException')
             ->duringPurchase(9.00);
     }
 }

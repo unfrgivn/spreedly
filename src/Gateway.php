@@ -1,6 +1,6 @@
 <?php
 
-namespace Tuurbo\Spreedly;
+namespace Cig\Spreedly;
 
 class Gateway
 {
@@ -29,7 +29,7 @@ class Gateway
      *		Spreedly::gateway()->setup();
      * </code>
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function setup()
     {
@@ -45,7 +45,7 @@ class Gateway
      *
      * @param string $gatewayToken optional
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function all($gatewayToken = null)
     {
@@ -65,7 +65,7 @@ class Gateway
      *		Spreedly::gateway($gatewayToken)->show();
      * </code>
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function show()
     {
@@ -83,7 +83,7 @@ class Gateway
      * @param string $gateway
      * @param array  $data    optional
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function create($gateway, array $data = null)
     {
@@ -112,7 +112,7 @@ class Gateway
      *
      * @param array $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function update(array $data)
     {
@@ -134,7 +134,7 @@ class Gateway
      *		Spreedly::gateway($gatewayToken)->disable();
      * </code>
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function disable()
     {
@@ -146,7 +146,7 @@ class Gateway
     }
 
     /**
-     * Handle dynamic calls for \Tuurbo\Spreedly\Payment.
+     * Handle dynamic calls for \Cig\Spreedly\Payment.
      *
      * Useful when you don't want to use the default gateway.
      *
@@ -186,7 +186,7 @@ class Gateway
      *
      * @link https://docs.spreedly.com/reference/api/v1/gateways/transactions/
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function transactions($paymentToken = null, array $data = [])
     {

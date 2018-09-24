@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Tuurbo\Spreedly;
+namespace spec\Cig\Spreedly;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Tuurbo\Spreedly\Client;
+use Cig\Spreedly\Client;
 
 class PaymentSpec extends ObjectBehavior
 {
@@ -15,7 +15,7 @@ class PaymentSpec extends ObjectBehavior
     {
         $this->beConstructedWith($client, [], self::PAYMENT_TOKEN, self::GATEWAY_TOKEN);
 
-        $this->shouldHaveType('Tuurbo\Spreedly\Payment');
+        $this->shouldHaveType('Cig\Spreedly\Payment');
     }
 
     public function it_gets_a_list_of_all_payments($client)
@@ -24,7 +24,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->all(self::PAYMENT_TOKEN)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->all(self::PAYMENT_TOKEN)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_creates_a_payment_method($client)
@@ -40,7 +40,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->create($data)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->create($data)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_updates_a_payment_method($client)
@@ -54,7 +54,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->update($data)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->update($data)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_retains_a_payment_method($client)
@@ -63,7 +63,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->retain()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->retain()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_recaches_a_payment_methods_cvv($client)
@@ -80,7 +80,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->recache(123)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->recache(123)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_stores_a_payment_method($client)
@@ -95,7 +95,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->store()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->store()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_gets_a_single_payment_method($client)
@@ -104,7 +104,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->get()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->get()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_disables_a_single_payment_method($client)
@@ -113,7 +113,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->disable()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->disable()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_gets_a_list_of_all_transactions_for_a_single_payment_method($client)
@@ -122,7 +122,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->transactions()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->transactions()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_gets_a_list_of_all_transactions_for_a_single_payment_method_and_paginates($client)
@@ -135,7 +135,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->transactions(self::PAYMENT_TOKEN, $data)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->transactions(self::PAYMENT_TOKEN, $data)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_makes_a_purchase($client)
@@ -154,7 +154,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->purchase($amount)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->purchase($amount)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_makes_a_purchase_with_euros($client)
@@ -174,7 +174,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->purchase($amount, $currency)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->purchase($amount, $currency)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_makes_a_purchase_with_extra_data($client)
@@ -201,12 +201,12 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->purchase($amount, $currency, $extra)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->purchase($amount, $currency, $extra)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_throws_an_exception_when_trying_to_make_a_purchase_with_an_invalid_amount()
     {
-        $this->shouldThrow('Tuurbo\Spreedly\Exceptions\InvalidAmountException')
+        $this->shouldThrow('Cig\Spreedly\Exceptions\InvalidAmountException')
             ->during('purchase', [-1]);
     }
 
@@ -226,7 +226,7 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->authorize($amount)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->authorize($amount)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_makes_an_authorize_with_euros($client)
@@ -246,12 +246,12 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->authorize($amount, $currency)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->authorize($amount, $currency)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_throws_an_exception_when_trying_to_make_an_authorize_with_an_invalid_amount()
     {
-        $this->shouldThrow('Tuurbo\Spreedly\Exceptions\InvalidAmountException')
+        $this->shouldThrow('Cig\Spreedly\Exceptions\InvalidAmountException')
             ->during('authorize', [-1]);
     }
 
@@ -271,7 +271,7 @@ class PaymentSpec extends ObjectBehavior
 
         $this->verify(false, [
             'currency_code' => 'USD',
-        ])->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        ])->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_makes_a_general_credit($client)
@@ -288,12 +288,12 @@ class PaymentSpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->generalCredit(10.98)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->generalCredit(10.98)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_throws_invalid_method_exception()
     {
-        $this->shouldThrow('Tuurbo\Spreedly\Exceptions\InvalidPaymentMethodException')
+        $this->shouldThrow('Cig\Spreedly\Exceptions\InvalidPaymentMethodException')
             ->during('undefinedMethod', ['some_param']);
     }
 }

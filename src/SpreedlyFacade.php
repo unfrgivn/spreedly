@@ -1,6 +1,6 @@
 <?php
 
-namespace Tuurbo\Spreedly;
+namespace Cig\Spreedly;
 
 use Illuminate\Support\Facades\Facade;
 

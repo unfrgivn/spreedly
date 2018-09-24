@@ -1,10 +1,10 @@
 <?php
 
-namespace spec\Tuurbo\Spreedly;
+namespace spec\Cig\Spreedly;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Tuurbo\Spreedly\Client;
+use Cig\Spreedly\Client;
 
 class GatewaySpec extends ObjectBehavior
 {
@@ -15,7 +15,7 @@ class GatewaySpec extends ObjectBehavior
     {
         $this->beConstructedWith($client, [], self::GATEWAY_TOKEN);
 
-        $this->shouldHaveType('Tuurbo\Spreedly\Gateway');
+        $this->shouldHaveType('Cig\Spreedly\Gateway');
     }
 
     public function it_requests_a_list_of_supported_gateways($client)
@@ -24,7 +24,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->all()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->all()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_requests_all_gateways_you_have_created($client)
@@ -33,7 +33,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->all()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->all()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_requests_a_specfic_gateway_you_have_created($client)
@@ -42,7 +42,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->show()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->show()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_requests_all_gateways_after_a_specified_token($client)
@@ -51,7 +51,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->all(self::GATEWAY_TOKEN)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->all(self::GATEWAY_TOKEN)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_gets_a_list_of_all_gateway_transactions_for_a_single_gateway($client)
@@ -60,7 +60,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->transactions()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->transactions()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_gets_a_list_of_all_gateway_transactions_for_a_single_gateway_and_paginates($client)
@@ -73,7 +73,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->transactions(self::PAYMENT_TOKEN, $data)->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->transactions(self::PAYMENT_TOKEN, $data)->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_creates_a_gateway($client)
@@ -82,7 +82,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->create('PAYPAL')->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->create('PAYPAL')->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_updates_a_gateway($client)
@@ -93,7 +93,7 @@ class GatewaySpec extends ObjectBehavior
 
         $this->update([
                 'password' => 'test',
-            ])->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+            ])->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_disables_a_gateway($client)
@@ -102,7 +102,7 @@ class GatewaySpec extends ObjectBehavior
             ->shouldBeCalled()
             ->willReturn($client);
 
-        $this->disable()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Client');
+        $this->disable()->shouldReturnAnInstanceOf('Cig\Spreedly\Client');
     }
 
     public function it_returns_the_gateway_token($client)
@@ -112,6 +112,6 @@ class GatewaySpec extends ObjectBehavior
 
     public function it_returns_a_payment_instance($client)
     {
-        $this->payment()->shouldReturnAnInstanceOf('Tuurbo\Spreedly\Payment');
+        $this->payment()->shouldReturnAnInstanceOf('Cig\Spreedly\Payment');
     }
 }

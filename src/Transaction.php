@@ -1,6 +1,6 @@
 <?php
 
-namespace Tuurbo\Spreedly;
+namespace Cig\Spreedly;
 
 class Transaction
 {
@@ -33,7 +33,7 @@ class Transaction
      *
      * @param string $transactionToken optional
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function all($transactionToken = null)
     {
@@ -55,7 +55,7 @@ class Transaction
      *
      * @param string $transactionToken optional
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function referencing($offset = null, $count = null, $reverse = false)
     {
@@ -109,7 +109,7 @@ class Transaction
      *		Spreedly::transaction($transactionToken)->get();
      * </code>
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function get()
     {
@@ -127,7 +127,7 @@ class Transaction
      *		Spreedly::transaction($transactionToken)->transcript();
      * </code>
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function transcript()
     {
@@ -149,7 +149,7 @@ class Transaction
      * @param string   $currency
      * @param array    $data
      *
-     * @return \Tuurbo\Spreedly\Client
+     * @return \Cig\Spreedly\Client
      */
     public function capture($amount = null, $currency = 'USD', array $data = [])
     {
